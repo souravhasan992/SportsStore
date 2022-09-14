@@ -191,14 +191,42 @@
     <Content Include="Scripts\knockout-3.5.1.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Prep\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Prep\Orders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\PrepController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IdentityConfig.cs" />
+    <Compile Include="Infrastructure\CustomResolver.cs" />
+    <Compile Include="Infrastructure\Identity\StoreAuthProvider.cs" />
+    <Compile Include="Infrastructure\Identity\StoreIdentityDbContext.cs" />
+    <Compile Include="Infrastructure\Identity\StoreIdentityDbInitializer.cs" />
+    <Compile Include="Infrastructure\Identity\StoreRole.cs" />
+    <Compile Include="Infrastructure\Identity\StoreRoleManager.cs" />
+    <Compile Include="Infrastructure\Identity\StoreUser.cs" />
+    <Compile Include="Infrastructure\Identity\StoreUserManager.cs" />
+    <Compile Include="Migrations\202209141550465_init.cs" />
+    <Compile Include="Migrations\202209141550465_init.Designer.cs">
+      <DependentUpon>202209141550465_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209141658177_authentication.cs" />
+    <Compile Include="Migrations\202209141658177_authentication.Designer.cs">
+      <DependentUpon>202209141658177_authentication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\IRepository.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductDbContext.cs" />
+    <Compile Include="Models\ProductDbInitializer.cs" />
+    <Compile Include="Models\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,7 +243,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202209141550465_init.resx">
+      <DependentUpon>202209141550465_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209141658177_authentication.resx">
+      <DependentUpon>202209141658177_authentication.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
